@@ -1,0 +1,15 @@
+Win32
+x64
+BigO/Debug
+Debug
+ipch
+
+GeneratedFiles
+*.tlog
+*.obj
+*.pch
+*.log
+*.pdb
+*.db
+.vs/
+*.opendb
