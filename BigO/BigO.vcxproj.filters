@@ -48,7 +48,7 @@
     <ClInclude Include="stocks.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="climb.h">
+    <ClInclude Include="array-o.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -57,9 +57,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="BigO.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="array1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="static_info.cpp">

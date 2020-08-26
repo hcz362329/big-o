@@ -6,7 +6,7 @@
 #include "sort.h"
 #include "string_al.h"
 #include "bitree.h"
-#include "climb.h"
+#include "array-o.h"
 #include "linkedlist.h"
 int main() {
 	srand(0);
@@ -66,29 +66,36 @@ int main() {
 	node10->right = nullptr;
 	node10->left = nullptr;
 
-	/*Solution3 s3;
+	Solution3 s3;
 	vector<int> vec1 = s3.preorderTraversal(node1);
 	vector<int> vec2 = s3.inorderTraversal(node1);
 	vector<int> vec3 = s3.epilTraversal(node1);
 	vector<int> vec4 = s3.hierarchyTraversal(node1);
-
+	vector<int> vec31 = s3.preorderTraversal2(node1);
+	printf("\n1111111\n");
 	for (int i = 0; i < vec1.size(); ++i) {
 		printf("	%d	", vec1[i]);
 	}
-	printf("\n\n");
+	printf("\n2222222\n");
+	for (int i = 0; i < vec31.size(); ++i) {
+		printf("	%d	", vec31[i]);
+	}
+	printf("\n3333333\n");
+	
 	for (int i = 0; i < vec2.size(); ++i) {
 		printf("	%d	", vec2[i]);
 	}
-	printf("\n\n");
+
+	printf("\n4444444\n");
 	for (int i = 0; i < vec3.size(); ++i) {
 		printf("	%d	", vec3[i]);
 	}
-	printf("\n\n");
+	printf("\n5555555\n");
 	for (int i = 0; i < vec4.size(); ++i) {
 		printf("	%d	", vec4[i]);
 	}
 
-	Solution5 s5;
+	/*Solution5 s5;
 	bool b = s5.isBalanced(node1);
 	printf("\n\n");
 
@@ -109,7 +116,7 @@ int main() {
 		}
 	}*/
 
-	ListNode* linknode1 = new ListNode(1);
+	/*ListNode* linknode1 = new ListNode(1);
 	ListNode* linknode2 = new ListNode(2);
 	ListNode* linknode3 = new ListNode(3);
 	ListNode* linknode4 = new ListNode(4);
@@ -129,7 +136,7 @@ int main() {
 	linknode6->next = linknode7;
 	linknode7->next = linknode8;
 	linknode8->next = linknode9;
-	linknode9->next = linknode10;
+	linknode9->next = linknode10;*/
 	printf("\n\n");
 	/*while (linknode1) {
 		printf("	%d	", linknode1->val);
@@ -142,17 +149,29 @@ int main() {
 		linknode6 = linknode6->next;
 	}*/
 
-	MoveSolution moveS;
-	int m = 10;
-	int n = 10;
-	int **k = moveS.uniquePaths(m,n);
+	/*MoveSolution moveS;
+	int m = 4;
+	int n = 4;
+	vector<vector<int> > a(m,vector<int>(n,0));
+	int x = 1;
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
-			printf("	%d	", k[i][j]);
+			a[i][j] = x++;
+			printf("	%d	", a[i][j]);
 		}
 		printf("\n\n");
 	}
-	printf("	%d	", k);
+
+	RotateSolution rs;
+	rs.rotate(a);
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			printf("	%d	", a[i][j]);
+		}
+		printf("\n\n");
+	}*/
+
+
 	printf("\n\n");
 	system("pause");
 

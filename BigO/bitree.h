@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <queue>
+#include <stack>
 using namespace std;
 struct TreeNode {
 	int val;
@@ -59,6 +60,28 @@ public:
 	* @return int整型vector
 	*/
 	vector<int> preVec;
+	vector<int> preVec2;
+	//迭代
+	void order3(TreeNode* root) {
+		if (root == nullptr)
+			return;
+		stack<TreeNode*> stk;
+		stk.push(root);
+		while (!stk.empty()) {
+			TreeNode* node = stk.top();
+			inorderVec2.push_back(node->val);
+			stk.pop();
+			if (node->right != nullptr) {
+				stk.push(node->right);
+				node->right == nullptr;
+			}
+			if (node->left != nullptr) {
+				stk.push(node->left);
+				node->left = nullptr;
+			}
+		}
+	}
+	//递归
 	void preNode(TreeNode* root) {
 		if (root == nullptr)
 			return;
@@ -71,9 +94,41 @@ public:
 		preNode(root);
 		return preVec;
 	}
+	vector<int> preorderTraversal2(TreeNode* root) {
+		// write code here
+		order3(root);
+		return preVec;
+	}
 
 	//中序
 	vector<int> inorderVec;
+	vector<int> inorderVec2;
+	void order2(TreeNode* root) {
+		if (root == nullptr)
+			return;
+		stack<TreeNode*> stk;
+		stk.push(root);
+		while (!stk.empty()) {
+			TreeNode* node = stk.top();
+			if (node->left == nullptr) {
+				inorderVec2.push_back(node->val);
+				stk.pop();
+				if (node->right != nullptr) {
+					stk.push(node->right);
+					node->right == nullptr;
+				}
+			}
+			if (node->left != nullptr) {
+				stk.push(node->left);
+				node->left = nullptr;
+			}
+		}
+	}
+	vector<int> inorderTraversal2(TreeNode* root) {
+		// write code here
+		order2(root);
+		return inorderVec2;
+	}
 	void inorderNode(TreeNode* root) {
 		if (root == nullptr)
 			return;
@@ -88,6 +143,30 @@ public:
 	}
 	//后序
 	vector<int> epilVec;
+	vector<int> epilVec2;
+	//迭代
+	void order(TreeNode* root) {
+		if (root == nullptr)
+			return;
+		stack<TreeNode*> stk;
+		stk.push(root);
+		while (!stk.empty()) {
+			TreeNode* node = stk.top();
+			if (node->left == nullptr && node->right == nullptr) {
+				epilVec2.push_back(node->val);
+				stk.pop();
+			}
+			if (node->right != nullptr) {
+				stk.push(node->right);
+				node->right = nullptr;
+			}
+			if (node->left != nullptr) {
+				stk.push(node->left);
+				node->left = nullptr;
+			}
+		}
+	}
+	//递归
 	void epilNode(TreeNode* root) {
 		if (root == nullptr)
 			return;
@@ -99,6 +178,11 @@ public:
 		// write code here
 		epilNode(root);
 		return epilVec;
+	}
+	vector<int> epilTraversal2(TreeNode* root) {
+		// write code here
+		order(root);
+		return epilVec2;
 	}
 
 	//层级遍历

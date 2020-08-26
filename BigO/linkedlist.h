@@ -27,7 +27,7 @@ public:
 	}
 };
 
-
+//É¾³ıÖØ¸´½Úµã
 class LinkedSolution2 {
 public:
 	/**
