@@ -51,6 +51,12 @@
     <ClInclude Include="array-o.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="sharedptr-cus.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vir-class.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

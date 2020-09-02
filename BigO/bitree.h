@@ -62,7 +62,7 @@ public:
 	vector<int> preVec;
 	vector<int> preVec2;
 	//µü´ú
-	void order3(TreeNode* root) {
+	void preIterator(TreeNode* root) {
 		if (root == nullptr)
 			return;
 		stack<TreeNode*> stk;
@@ -96,7 +96,7 @@ public:
 	}
 	vector<int> preorderTraversal2(TreeNode* root) {
 		// write code here
-		order3(root);
+		preIterator(root);
 		return preVec;
 	}
 
@@ -369,10 +369,36 @@ public:
 		//b[3]=b[0]*b[2]+b[1]*b[1]+b[2]*b[0]=5;
 		//b[4]=b[0]*b[3]+b[1]*b[2]+b[2]*b[1]+b[3]*b[0]=14
 		for (int i = 2; i <= n; i++) {
+			bst[i] = 0;
 			for (int j = 1; j <= i; j++) {
 				bst[i] += bst[j - 1] * bst[i - j];
 			}
 		}
 		return bst[n];
+	}
+};
+
+class NumTreeTotal {
+public:
+	int getTotal(TreeNode* root) {
+		if (root == nullptr)
+			return 0;
+		int total = 0;
+		TreeNode* nodeLeft = root->left;
+		TreeNode* nodeRight = root->right;
+		if (nodeLeft != nullptr) {
+			while (nodeLeft->left) {
+				nodeLeft = nodeLeft->left;
+			}
+		}
+		if (nodeRight != nullptr) {
+			while (nodeRight->right) {
+				nodeRight = nodeRight->right;
+			}
+		}
+		int val1 = nodeLeft != nullptr ? nodeLeft->val : 0;
+		int val2 = nodeRight != nullptr ? nodeRight->val : 0;
+		total = val1 + val2;
+		return total;
 	}
 };

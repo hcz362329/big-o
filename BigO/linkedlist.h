@@ -111,3 +111,19 @@ public:
 		return tmp;
 	}
 };
+
+class SolutionReverse {
+public:
+	ListNode* reverseLink(ListNode* head) {
+		ListNode* pre = NULL;
+		ListNode* cur = head;
+		ListNode* temp;
+		while (cur != NULL) {
+			temp = cur->next;
+			cur->next = pre;
+			pre = cur;
+			cur = temp; 
+		}
+		return pre;
+	}
+};

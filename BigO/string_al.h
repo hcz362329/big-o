@@ -28,10 +28,10 @@ int string_cmp(const char* src, const char* dst) {
 		++src;
 		++dst;
 	}
-		if ( ret < 0 )
-			ret = -1 ;
-		else if ( ret > 0 )
-			ret = 1 ;
-		return( ret );
+	if ( ret < 0 )
+		ret = -1 ;
+	else if ( ret > 0 )
+		ret = 1 ;
+	return( ret );
 
 }
