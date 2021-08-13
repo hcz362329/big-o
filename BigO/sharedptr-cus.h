@@ -44,7 +44,9 @@ public:
 	}
 
 	SharedPtr& operator=(const SharedPtr& sharedptr) {
+		ptr->decrement();
 		ptr = sharedptr->ptr;
+		ptr->increament();
 	}
 	SharedPtr(SharedPtr&& sharedptr) {
 		ptr = sharedptr->ptr;

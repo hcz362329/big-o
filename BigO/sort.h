@@ -7,6 +7,8 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <stdio.h>
+#include <iostream>
 using namespace std;
 template<typename T>
 void Swap(T & a, T & b) {
@@ -96,7 +98,7 @@ void quicksort(int arr[],int left, int right)
 	int i, j, base, temp;
 	i = left, j = right;
 	base = arr[left];  //取最左边的数为基准数
-	while (i < j)
+	if (i < j)
 	{
 		while (arr[j] >= base && i < j)
 			j--;
@@ -107,6 +109,7 @@ void quicksort(int arr[],int left, int right)
 			Swap(arr[i], arr[j]);
 		}
 	}
+	cout << "i:" << i << ",j:" << j<<"\n";
 	//基准数归位
 	arr[left] = arr[i];
 	arr[i] = base;

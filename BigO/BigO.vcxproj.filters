@@ -57,6 +57,12 @@
     <ClInclude Include="vir-class.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="typeid_c.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="memory_tracker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -66,6 +72,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="static_info.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="memory_tracker.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
